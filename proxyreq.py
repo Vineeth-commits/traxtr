@@ -15,11 +15,12 @@ proxies = get_proxies()
 
 def get_working_proxies():
     working = []
-    for i in range(20):
+    for i in range(30):
         proxy = get_random_proxy(proxies)
         print(f"using {proxy}...")
         try:
             r = requests.get("https://www.google.com",proxies=proxy, timeout=3)
+            print(r.status_code)
             if r.status_code == 200:
                 working.append(proxy)
         except:
