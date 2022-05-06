@@ -3,14 +3,14 @@ from email.message import EmailMessage
 
 # content
 sender = ""
-reciever = ""
+reciever = "vineethnreddy@gmail.com "
 password = ""
-msg_body = 'test alert mail'
+msg_body = 'Your product has reached its alert price url - https://www.amazon.in/Samsung-23-5-inch-Curved-Monitor/dp/B01GFPGHSM/ref=lp_1375425031_1_2?smid=A14CZOWI0VEHLG&th=1'
 
 
 # action
 msg = EmailMessage()
-msg['subject'] = 'notify'   
+msg['subject'] = 'price alert'   
 msg['from'] = sender
 msg['to'] = reciever
 msg.set_content(msg_body)

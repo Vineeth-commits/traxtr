@@ -13,3 +13,6 @@
 * Data visualisation
    1. Line Graphs
 * GUI
+
+
+Convert the price to float

@@ -6,7 +6,7 @@ regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 
 myclient = pymongo.MongoClient("mongodb+srv://traxtr-admin:<password>@traxtr-cluster.nptfv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = myclient["traxtr"]
-db_col = mydb["login_system"]
+db_col = db["login_system"]
 
 def check_existing_user(username):
     username_insert = {"user": username}
@@ -43,7 +43,7 @@ def login():
             continue
         if login_attempts==4:
             print("You have exceeded your login attempts")
-            return
+            return 0
         if not check_existing_user(username):
             print("Incorrect username")
             login_attempts += 1
@@ -58,13 +58,13 @@ def login():
             continue
         if login_attempts==4:
             print("You have exceeded your attempts")
-            return
+            return 0
         if not password_check(username,password):
             print("Incorrect password")
             login_attempts +=1
             continue
         else:
-            break
+            return username
 
 def register():
     while True:
@@ -97,15 +97,5 @@ def register():
     time.sleep(1)
     print("Account has been created")
 
-print("Welcome to the system. Please register or login.")
-print("Options: register | login | exit")
-while True:
-    option = input("> ")
-    if option == "login":
-        login()
-    elif option == "register":
-        register()
-    elif option == "exit":
-        break
-    else:
-        print(option + " is not an option")
+def get_id_by_username(username):
+    return db_col.find_one({"user":username})["_id"]
