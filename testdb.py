@@ -13,5 +13,8 @@ mycol = mydb["data_chart"]
 #x =[]
 #for doc in  mycol.find():
 #    x.append(doc["name"])
-for doc in mycol.find(): 
-    print(doc)
+#for doc in mycol.find(): 
+#    print(doc)
+test = 'https://www.snapdeal.com/product/ausk-cotton-blend-multi-striper/654726054211'
+yo = 'hello ' + test
+print(yo)

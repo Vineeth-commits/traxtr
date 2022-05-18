@@ -4,7 +4,7 @@ import pymongo
 
 regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 
-myclient = pymongo.MongoClient("mongodb+srv://traxtr-admin:<password>@traxtr-cluster.nptfv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+myclient = pymongo.MongoClient("mongodb+srv://traxtr-admin:traxtr-passkey123@traxtr-cluster.nptfv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = myclient["traxtr"]
 db_col = db["login_system"]
 

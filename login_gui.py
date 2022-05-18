@@ -1,4 +1,4 @@
-from tkinter import *
+import tkinter as tk
 
 ws = Tk()
 ws.title('Login')

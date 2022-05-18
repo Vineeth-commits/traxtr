@@ -24,5 +24,4 @@ def input_decimal():
         else:
             flag = False
     number = float(input_value)
-    print("The input number is:", number)
-
+    return number
