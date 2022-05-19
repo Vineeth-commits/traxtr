@@ -9,7 +9,7 @@ from test_login_system import *
 
 user_agent_list = 'Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0'
 db_col2 = db["data_chart"]
-def test_enter_choice():
+def test_enter_choice(verify_user):
     while True:
         print("Select the url of the website")
         print("Press 1 for Snapdeal")
@@ -81,7 +81,7 @@ def test_start():
         if option == "login":
             verify_user = test_login()
             if verify_user != 0:
-                test_enter_choice()
+                test_enter_choice(verify_user)
             else:
                 print("Login failed")
         elif option == "register":
@@ -91,3 +91,4 @@ def test_start():
         else:
             print(option + " is not an option")
 
+test_start()
